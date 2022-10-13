@@ -85,6 +85,57 @@ public class App {
     public void printRhombus(){
         // input your solution here
 
+        Scanner scanTask4 = new Scanner(System.in);
+
+        System.out.print("h: ");
+        int inputRows = scanTask4.nextInt();
+
+        System.out.print("c: ");
+        char userChar = scanTask4.next().charAt(0);
+
+        int count = 1, spaces = 1, start = 1;
+
+
+        if (inputRows % 2 != 0) {
+
+
+            for (int i = 1; i <= (inputRows); i++) {
+                for (int y = inputRows - spaces; y > 0; y--) {
+                    System.out.print(" ");
+                }
+
+                if (i < inputRows) {
+                    start = i;
+                    spaces++;
+                } else {
+                    start = inputRows * 2 - i;
+                    spaces--;
+                }
+
+                for (int j = 0; j < count; j++) {
+                    System.out.print(userChar);
+                    if (j < count / 2) {
+                        userChar++;
+                    } else {
+                        userChar--;
+                    }
+                }
+
+                if (i < inputRows) {
+                    count = count + 2;
+                } else {
+                    count = count - 2;
+                }
+
+                System.out.println("");
+            }
+
+        } else {
+            System.out.println("Invalid number!");
+        }
+
+
+
 
     }
 
