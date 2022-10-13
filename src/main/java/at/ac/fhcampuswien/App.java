@@ -137,6 +137,36 @@ public class App {
     //todo Task 6
     public void happyNumbers(){
         // input your solution here
+
+        Scanner scanTask6 = new Scanner(System.in);
+
+        System.out.print("n: ");
+        int userNum = scanTask6.nextInt();
+
+        int sum = 0;
+
+        while(userNum > 6) {
+
+            while(userNum > 0) {
+                int mod = userNum % 10;
+
+                sum = sum + (mod * mod);
+                userNum = userNum / 10;
+            }
+
+            userNum = sum;
+            sum = 0;
+
+        }
+
+        if (userNum == 1) {
+            System.out.println("Happy number!");
+        } else {
+            System.out.println("Sad number!");
+        }
+
+
+
     }
 
     public static void main(String[] args){
